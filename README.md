@@ -1,12 +1,14 @@
-# drgvpn-UDP By drgvpn
+# drgvpn-udp By KHALED AGN
 
 THIS IS A SCRIPT FOR AUTO INSTALLATION OF UDP (HYSTERIA SERVER) 
 
 
 
-# Client app http costom
+# Client app AGN INJECTOR
 
-
+<p>
+<a href="https://play.google.com/store/apps/details?id=com.agn.injector"><img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="100"></a>
+</p>
 
 
 # Installation
@@ -14,21 +16,23 @@ THIS IS A SCRIPT FOR AUTO INSTALLATION OF UDP (HYSTERIA SERVER)
 
 // Download the script
 ```
-wget https://github.com/internetvps/drgvpn-udp/raw/main/install_drgvpn-udp.sh
+wget https://github.com/internetvps/drgvpn-udp/raw/main/install_drgvpnudp.sh
 ```
 // Edit script configuration 
 ```
-nano install_drgvpn-udp.sh
+nano install_drgvpnudp.sh
 ```
 // Install the script
 ```
-chmod +x install_drgvpn-udp.sh; ./install_drgvpn-udp.sh
+chmod +x install_drgvpnudp.sh; ./install_drgvpnudp.sh
 ```
 
-## :octocat: by drgvpn udp
+## :octocat: by drgvpn
 <ul>
  <li>TELEGRAM CHANNEL: https://t.me/drg_vpn</li>
- <ul>
+ <li>
+ 
+ </ul>
  
 ## :octocat: Credits
 
