@@ -8,7 +8,7 @@
 set -e
 
 # Domain Name
-DOMAIN="vpn.drgvpnudp.site"
+DOMAIN="droidtech.my.id"
 
 # PROTOCOL
 PROTOCOL="udp"
@@ -20,7 +20,7 @@ UDP_PORT=":36712"
 OBFS="drgvpnudp"
 
 # PASSWORDS
-PASSWORD="drgvpnudp"
+PASSWORD="03061988"
 
 # Script paths
 SCRIPT_NAME="$(basename "$0")"
