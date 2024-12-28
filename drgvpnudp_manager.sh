@@ -108,20 +108,20 @@ restart_server() {
 }
 
 uninstall_server() {
-    echo -e "\n\e[1;34mUninstalling drgvpn-udp server...\e[0m"
+    echo -e "\n\e[1;34mUninstalling drgvpnudp server...\e[0m"
     systemctl stop hysteria-server
     systemctl disable hysteria-server
     rm -f "$SYSTEMD_SERVICE"
     systemctl daemon-reload
     rm -rf "$CONFIG_DIR"
     rm -f /usr/local/bin/hysteria
-    echo -e "\e[1;32mdrgvpn-udp server uninstalled successfully.\e[0m"
+    echo -e "\e[1;32mdrgvpnudp server uninstalled successfully.\e[0m"
 }
 
 show_banner() {
     echo -e "\e[1;36m---------------------------------------------"
     echo " drgvpnudp Manager"
-    echo " (c) 2023 drgvpn drgvpn"
+    echo " (c) 2023 drgvpn"
     echo " Telegram: @drg_vpn"
     echo "---------------------------------------------\e[0m"
 }
