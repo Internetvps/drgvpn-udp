@@ -18,11 +18,11 @@ wget https://github.com/internetvps/drgvpn-udp/raw/main/install_drgvpn-udp.sh
 ```
 // Edit script configuration 
 ```
-nano install_drgvpnudp.sh
+nano install_drgvpn-udp.sh
 ```
 // Install the script
 ```
-chmod +x install_drgvpnudp.sh; ./install_drgvpn-udp.sh
+chmod +x install_drgvpn-udp.sh; ./install_drgvpn-udp.sh
 ```
 
 ## :octocat: by drgvpn udp
