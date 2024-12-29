@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #
-# Try `install_agnudp.sh --help` for usage.
+# Try `install_drgudp.sh --help` for usage.
 #
-# (c) 2023 Khaled AGN
+# (c) 2024 drgvpn
 #
 
 set -e
 
 # Domain Name
-DOMAIN="vpn.khaledagn.me"
+DOMAIN="droidtech.my.id"
 
 # PROTOCOL
 PROTOCOL="udp"
@@ -17,10 +17,10 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # OBFS
-OBFS="agnudp"
+OBFS="drgudp"
 
 # PASSWORDS
-PASSWORD="agnudp"
+PASSWORD="123456"
 
 # Script paths
 SCRIPT_NAME="$(basename "$0")"
@@ -641,18 +641,18 @@ perform_install_hysteria_home_legacy() {
 }
 
 perform_install_manager_script() {
-    local _manager_script="/usr/local/bin/agnudp_manager.sh"
-    local _symlink_path="/usr/local/bin/agnudp"
+    local _manager_script="/usr/local/bin/drgvpnudp_manager.sh"
+    local _symlink_path="/usr/local/bin/drgudp"
     
     echo "Downloading manager script..."
-    curl -o "$_manager_script" "https://github.com/khaledagn/AGN-UDP/raw/main/agnudp_manager.sh"
+    curl -o "$_manager_script" "https://github.com/internetvps/drgvpn-udp/raw/main/drgvpnudp_manager.sh"
     chmod +x "$_manager_script"
     
-    echo "Creating symbolic link to run the manager script using 'agnudp' command..."
+    echo "Creating symbolic link to run the manager script using 'drgvpnudp' command..."
     ln -sf "$_manager_script" "$_symlink_path"
     
     echo "Manager script installed at $_manager_script"
-    echo "You can now run the manager using the 'agnudp' command."
+    echo "You can now run the manager using the 'drgvpnudp' command."
 }
 
 
@@ -720,8 +720,8 @@ perform_install() {
 
     if [[ -n "$_is_fresh_install" ]]; then
         echo
-        echo -e "$(tbold)Congratulations! AGN-UDP has been successfully installed on your server.$(treset)"
-        echo "Use 'agnudp' command to access the manager."
+        echo -e "$(tbold)Congratulations! DRGVPN-UDP has been successfully installed on your server.$(treset)"
+        echo "Use 'drgvpnudp' command to access the manager."
 
         echo
         echo -e "$(tbold)Client app AGN INJECTOR:$(treset)"
@@ -729,15 +729,14 @@ perform_install() {
         echo
         echo -e "Follow me!"
         echo
-        echo -e "\t+ Check out my website at $(tblue)https://www.khaledagn.me$(treset)"
-        echo -e "\t+ Follow me on Telegram: $(tblue)https://t.me/khaledagn$(treset)"
-        echo -e "\t+ Follow me on Facebook: $(tblue)https://facebook.com/itskhaledagn$(treset)"
+        echo -e "\t+ Check out my website at $(tblue)https://t.me/drg_vpn$(treset)"
+    
         echo
     else
         restart_running_services
         start_services
         echo
-        echo -e "$(tbold)AGN-UDP has been successfully updated to $VERSION.$(treset)"
+        echo -e "$(tbold)DRGVPN-UDP has been successfully updated to $VERSION.$(treset)"
         echo
     fi
 }
@@ -748,7 +747,7 @@ perform_remove() {
     perform_remove_hysteria_systemd
 
     echo
-    echo -e "$(tbold)Congratulations! AGN-UDP has been successfully removed from your server.$(treset)"
+    echo -e "$(tbold)Congratulations! DRGVPN-UDP has been successfully removed from your server.$(treset)"
     echo
     echo -e "You still need to remove configuration files and ACME certificates manually with the following commands:"
     echo
