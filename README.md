@@ -16,15 +16,15 @@ THIS IS A SCRIPT FOR AUTO INSTALLATION OF UDP (HYSTERIA SERVER)
 
 // Download the script
 ```
-wget https://github.com/internetvps/drgvpn-udp/raw/main/install_drgvpnudp.sh
+wget https://github.com/internetvps/drgvpn-udp/raw/main/install_drgudp.sh
 ```
 // Edit script configuration 
 ```
-nano install_drgvpnudp.sh
+nano install_drgudp.sh
 ```
 // Install the script
 ```
-chmod +x install_drgvpnudp.sh; ./install_drgvpnudp.sh
+chmod +x install_drgudp.sh; ./install_drgudp.sh
 ```
 
 ## :octocat: by drgvpn
