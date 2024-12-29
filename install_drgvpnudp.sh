@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #
-# Try `install_drgvpnudp.sh --help` for usage.
+# Try `install_agnudp.sh --help` for usage.
 #
-# (c) 2023 drgvpnudp drg
+# (c) 2023 Khaled AGN
 #
 
 set -e
 
 # Domain Name
-DOMAIN="vpn.drgvpnudp.site"
+DOMAIN="vpn.khaledagn.me"
 
 # PROTOCOL
 PROTOCOL="udp"
@@ -17,10 +17,10 @@ PROTOCOL="udp"
 UDP_PORT=":36712"
 
 # OBFS
-OBFS="drgvpnudp"
+OBFS="agnudp"
 
 # PASSWORDS
-PASSWORD="drgvpnudp"
+PASSWORD="agnudp"
 
 # Script paths
 SCRIPT_NAME="$(basename "$0")"
@@ -429,18 +429,18 @@ check_environment() {
 
 show_usage_and_exit() {
     echo
-    echo -e "\t$(tbold)$SCRIPT_NAME$(treset) - drgvpn-udp server install script"
+    echo -e "\t$(tbold)$SCRIPT_NAME$(treset) - AGN-UDP server install script"
     echo
     echo -e "Usage:"
     echo
-    echo -e "$(tbold)Install drgvpn-udp$(treset)"
+    echo -e "$(tbold)Install AGN-UDP$(treset)"
     echo -e "\t$0 [ -f | -l <file> | --version <version> ]"
     echo -e "Flags:"
     echo -e "\t-f, --force\tForce re-install latest or specified version even if it has been installed."
-    echo -e "\t-l, --local <file>\tInstall specified drgvpn-udp binary instead of download it."
+    echo -e "\t-l, --local <file>\tInstall specified AGN-UDP binary instead of download it."
     echo -e "\t--version <version>\tInstall specified version instead of the latest."
     echo
-    echo -e "$(tbold)Remove drgvpn-udp$(treset)"
+    echo -e "$(tbold)Remove AGN-UDP$(treset)"
     echo -e "\t$0 --remove"
     echo
     echo -e "$(tbold)Check for the update$(treset)"
@@ -458,7 +458,7 @@ tpl_hysteria_server_service_base() {
 
     cat << EOF
 [Unit]
-Description=drgvpn-udp Service
+Description=AGN-UDP Service
 After=network.target
 
 [Service]
@@ -641,18 +641,18 @@ perform_install_hysteria_home_legacy() {
 }
 
 perform_install_manager_script() {
-    local _manager_script="/usr/local/bin/drgvpnudp_manager.sh"
-    local _symlink_path="/usr/local/bin/drgvpnudp"
+    local _manager_script="/usr/local/bin/agnudp_manager.sh"
+    local _symlink_path="/usr/local/bin/agnudp"
     
     echo "Downloading manager script..."
-    curl -o "$_manager_script" "https://github.com/drgvpnudpagn/drgvpn-udp/raw/main/drgvpnudp_manager.sh"
+    curl -o "$_manager_script" "https://github.com/khaledagn/AGN-UDP/raw/main/agnudp_manager.sh"
     chmod +x "$_manager_script"
     
-    echo "Creating symbolic link to run the manager script using 'drgvpnudp' command..."
+    echo "Creating symbolic link to run the manager script using 'agnudp' command..."
     ln -sf "$_manager_script" "$_symlink_path"
     
     echo "Manager script installed at $_manager_script"
-    echo "You can now run the manager using the 'drgvpnudp' command."
+    echo "You can now run the manager using the 'agnudp' command."
 }
 
 
@@ -720,8 +720,8 @@ perform_install() {
 
     if [[ -n "$_is_fresh_install" ]]; then
         echo
-        echo -e "$(tbold)Congratulations! drgvpn-udp has been successfully installed on your server.$(treset)"
-        echo "Use 'drgvpnudp' command to access the manager."
+        echo -e "$(tbold)Congratulations! AGN-UDP has been successfully installed on your server.$(treset)"
+        echo "Use 'agnudp' command to access the manager."
 
         echo
         echo -e "$(tbold)Client app AGN INJECTOR:$(treset)"
@@ -729,15 +729,15 @@ perform_install() {
         echo
         echo -e "Follow me!"
         echo
-        echo -e "\t+ Check out my website at $(tblue)https://www.drgvpnudpagn.me$(treset)"
-        echo -e "\t+ Follow me on Telegram: $(tblue)https://t.me/drgvpnudpagn$(treset)"
-        echo -e "\t+ Follow me on Facebook: $(tblue)https://facebook.com/itsdrgvpnudpagn$(treset)"
+        echo -e "\t+ Check out my website at $(tblue)https://www.khaledagn.me$(treset)"
+        echo -e "\t+ Follow me on Telegram: $(tblue)https://t.me/khaledagn$(treset)"
+        echo -e "\t+ Follow me on Facebook: $(tblue)https://facebook.com/itskhaledagn$(treset)"
         echo
     else
         restart_running_services
         start_services
         echo
-        echo -e "$(tbold)drgvpn-udp has been successfully updated to $VERSION.$(treset)"
+        echo -e "$(tbold)AGN-UDP has been successfully updated to $VERSION.$(treset)"
         echo
     fi
 }
@@ -748,7 +748,7 @@ perform_remove() {
     perform_remove_hysteria_systemd
 
     echo
-    echo -e "$(tbold)Congratulations! drgvpn-udp has been successfully removed from your server.$(treset)"
+    echo -e "$(tbold)Congratulations! AGN-UDP has been successfully removed from your server.$(treset)"
     echo
     echo -e "You still need to remove configuration files and ACME certificates manually with the following commands:"
     echo
@@ -780,7 +780,7 @@ setup_ssl() {
 }
 
 start_services() {
-    echo "Starting drgvpn-udp"
+    echo "Starting AGN-UDP"
     apt update
     sudo debconf-set-selections <<< "iptables-persistent iptables-persistent/autosave_v4 boolean true"
     sudo debconf-set-selections <<< "iptables-persistent iptables-persistent/autosave_v6 boolean true"
